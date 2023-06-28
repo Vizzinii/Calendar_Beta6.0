@@ -6,7 +6,7 @@
 #include"Team.h"
 using namespace std;
 
-Control::Control() :ppv(NULL), ppm(NULL), ppl(NULL) {};
+Control::Control() :ppv(NULL), ppm(NULL), ppl(NULL), ppt(NULL) {};
 Control::~Control() {};
 void Control::SetView(View* pv)
 {
