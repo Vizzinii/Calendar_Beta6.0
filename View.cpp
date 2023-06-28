@@ -24,7 +24,9 @@ int View::menu()
 	cout << "----------10.查找成员空闲时间----------" << endl;
 	cout << "--------11.查询某个时间空闲人数--------" << endl;
 	cout << "---------------------------------------" << endl;
-	cout << "What You Wanna Do" << endl;
+	cout << "-----------------------------------------------------" << endl;
+	cout << "|     What You Wanna Do ? Write Down The Number.    |" << endl;
+	cout << "-----------------------------------------------------" << endl;
 	cin >> se;
 	return se;
 }
@@ -33,9 +35,15 @@ void View::Get(int year, int month, int date, int firdaysweek, int msday, int ry
 {
 	int n = msday + firdaysweek;
 	int d = 1;
-	cout << "当前时间是" << ry << "年" << rm << "月" << rd << "日" << endl;
+	int c = ry / 100;
+	int y = ry % 100;
+	int m = rm;
+	int a = rd;
+	int rxq = ((y + y / 4 + c / 4 - 2 * c + 26 * (m + 1) / 10 + a - 1) % 7) > 0 ? (y + y / 4 + c / 4 - 2 * c + 26 * (m + 1) / 10 + a - 1) % 7 : (y + y / 4 + c / 4 - 2 * c + 26 * (m + 1) / 10 + a - 1) % 7 + 7;
+	cout << "----------" << ry << "年" << rm << "月" << rd << "日 星期" << rxq << "--------" << endl;
+	//cout << "星期" << rxq << endl;
 	//cout << n << endl;
-	cout << "输出的时间是" << year << "年" << month << "月" << endl;
+	cout << "---------输出的时间是" << year << "年" << month << "月---------" << endl;
 	cout << "   日   一   二   三   四   五   六" << endl;
 	for (int i = 1; i <= n; ++i)
 	{

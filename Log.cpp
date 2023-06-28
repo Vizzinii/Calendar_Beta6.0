@@ -68,7 +68,8 @@ void Log::set()
 			else if (i % 2 == 0)
 			{
 				logs[count].Password = temp;
-				cout << logs[count].Name << " " << logs[count].Password << endl;
+				cout << "已有用户" << "     " << "密码" << endl;
+				cout << logs[count].Name << "           " << logs[count].Password << endl;
 				count += 1;
 			}
 			//cout << "aaa" << " " << count << endl;

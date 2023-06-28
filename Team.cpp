@@ -232,6 +232,7 @@ void Team::daily()
 	cout << "您想要查找星期几的日报？" << endl;
 	cin >> which;
 
+	cout << "团队一共有" << total << "人" << endl;
 	int flag = 0;
 	for (int i = 1;i <= total;i++)
 	{
@@ -694,7 +695,17 @@ void Team::searchtime()
 		}
 	}
 
-	cout << "团队一共有" << total << "人。" << endl;
-	cout << "在星期" << week << "有日程安排的一共有" << flag << "人，没有日程安排的一共有" << total - flag << "人" << endl;
+	float per = 0.0;
+	cout << "团队一共有" << total << "人,";
+	cout << "在星期" << week << "有日程安排的一共有" << flag << "人，没有日程安排的一共有" << total - flag << "人。" << endl;
+	per = flag * 1.0 / total;
+	if (per >= 0.4)
+	{
+		cout << "该时间段一共有" << per * 100.0 << "%的用户有日程安排，不推荐在此时间段进行集体日程安排。" << endl;
+	}
+	if (per < 0.4)
+	{
+		cout << "该时间段一共有" << per * 100.0 << "%的用户有日程安排，推荐在此时间段进行集体日程安排。" << endl;
+	}
 	cout << "其中在该时间段内处于空闲的成员一共有" << total - have << "人" << endl;
 }
